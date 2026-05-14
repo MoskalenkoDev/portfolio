@@ -112,8 +112,9 @@ export default function Hero() {
               <Image
                 src="/my-photo.jpg"
                 alt="Mykola Moskalenko"
-                width={256}
-                height={256}
+                width={320}
+                height={320}
+                sizes="(max-width: 639px) 208px, (max-width: 767px) 240px, 320px"
                 className="w-full h-full object-cover object-top"
                 priority
               />
