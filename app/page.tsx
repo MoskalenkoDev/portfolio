@@ -1,15 +1,16 @@
-import dynamic from "next/dynamic";
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Skills from "@/components/Skills";
-import Education from "@/components/Education";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+import dynamic from 'next/dynamic'
 
-const Experience = dynamic(() => import("@/components/Experience"), {
+import About from '@/components/about'
+import Contact from '@/components/contact'
+import Education from '@/components/education'
+import Footer from '@/components/footer'
+import Hero from '@/components/hero'
+import Navbar from '@/components/navbar'
+import Skills from '@/components/skills'
+
+const Experience = dynamic(() => import('@/components/experience'), {
   ssr: true,
-});
+})
 
 export default function Home() {
   return (
@@ -23,5 +24,5 @@ export default function Home() {
       <Contact />
       <Footer />
     </main>
-  );
+  )
 }

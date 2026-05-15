@@ -3,8 +3,8 @@ const nextConfig = {
   compress: true,
   poweredByHeader: false,
   images: {
-    formats: ["image/avif", "image/webp"],
+    formats: ['image/avif', 'image/webp'],
   },
-};
+}
 
-export default nextConfig;
+export default nextConfig
