@@ -1,3 +1,5 @@
+import { Button } from '@/components/ui/Button'
+
 import { NavLink } from './NavLink'
 
 const navLinks = [
@@ -30,14 +32,15 @@ export function MobileNav({ isOpen, activeSection, onLinkClick }: MobileNavProps
             <NavLink key={link.href} href={link.href} label={link.label} isActive={isActive} onClick={onLinkClick} />
           )
         })}
-        <a
+        <Button
           href="/Mykola%20Moskalenko%20Full%20Stack%20Resume.pdf"
           download
-          className="font-mono text-sm text-primary transition-colors hover:text-primary-light"
+          variant="secondary"
+          size="sm"
           onClick={onLinkClick}
         >
           Download Resume
-        </a>
+        </Button>
       </div>
     </div>
   )

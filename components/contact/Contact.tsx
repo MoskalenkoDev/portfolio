@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/Button'
 import { DownloadIcon, EmailIcon, GitHubIcon, LinkedInIcon, PhoneIcon } from '@/components/ui/icons'
 
 import { ContactCard } from './ContactCard'
@@ -57,14 +58,10 @@ export default function Contact() {
         </div>
 
         <div className="text-center">
-          <a
-            href="/Mykola%20Moskalenko%20Full%20Stack%20Resume.pdf"
-            download
-            className="inline-flex items-center gap-2 rounded bg-primary px-6 py-3 font-mono text-sm font-semibold text-background transition-all duration-150 hover:bg-primary-light active:scale-95"
-          >
+          <Button href="/Mykola%20Moskalenko%20Full%20Stack%20Resume.pdf" download variant="primary">
             <DownloadIcon className="h-4 w-4" />
             Download Resume
-          </a>
+          </Button>
         </div>
       </div>
     </section>

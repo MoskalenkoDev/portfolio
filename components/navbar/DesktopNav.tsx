@@ -1,3 +1,5 @@
+import { Button } from '@/components/ui/Button'
+
 import { NavLink } from './NavLink'
 
 const navLinks = [
@@ -20,13 +22,9 @@ export function DesktopNav({ activeSection }: DesktopNavProps) {
         const isActive = activeSection === id
         return <NavLink key={link.href} href={link.href} label={link.label} isActive={isActive} />
       })}
-      <a
-        href="/Mykola%20Moskalenko%20Full%20Stack%20Resume.pdf"
-        download
-        className="hover:bg-primary/10 rounded border border-primary px-3 py-1.5 font-mono text-sm text-primary transition-colors duration-150"
-      >
+      <Button href="/Mykola%20Moskalenko%20Full%20Stack%20Resume.pdf" download variant="secondary" size="sm">
         Resume
-      </a>
+      </Button>
     </div>
   )
 }

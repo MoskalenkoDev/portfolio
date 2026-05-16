@@ -7,10 +7,10 @@ export default function Education() {
         <p className="mb-2 font-mono text-xs uppercase tracking-[0.2em] text-primary">04. education</p>
         <h2 className="mb-10 font-mono text-3xl font-bold text-foreground">Education</h2>
 
-        <div className="hover:border-primary/30 group rounded-xl border border-border bg-muted p-6 transition-colors duration-200">
+        <div className="group rounded-xl border border-border bg-muted p-6 transition-colors duration-200 hover:border-primary">
           <div className="flex items-start gap-4">
-            <div className="bg-primary/10 border-primary/20 group-hover:bg-primary/15 mt-0.5 flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg border transition-colors duration-200">
-              <GraduationIcon className="h-5 w-5 text-primary" />
+            <div className="mt-0.5 flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg border border-border transition-colors duration-200">
+              <GraduationIcon className="h-5 w-5 text-muted-foreground" />
             </div>
 
             <div className="min-w-0 flex-1">
