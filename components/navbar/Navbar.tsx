@@ -98,9 +98,9 @@ export default function Navbar() {
 
   const handleLogoClick = (e: React.MouseEvent) => {
     e.preventDefault()
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    handleSectionChange('hero')
     history.replaceState(null, '', window.location.pathname)
-    setActiveSection('')
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   const handleMobileMenuToggle = () => setMobileOpen(!mobileOpen)

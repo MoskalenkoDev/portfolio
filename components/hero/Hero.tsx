@@ -3,7 +3,7 @@ import { HeroPhoto } from './HeroPhoto'
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative flex min-h-dvh items-center overflow-hidden px-6 pb-16 pt-20">
+    <section id="hero" className="relative flex min-h-svh items-center overflow-hidden px-6 pb-16 pt-20">
       <div className="hero-grid pointer-events-none absolute inset-0 opacity-40" aria-hidden="true" />
       <div
         className="hero-glow-left pointer-events-none absolute -left-40 top-1/4 h-[600px] w-[600px] rounded-full"
