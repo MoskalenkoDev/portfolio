@@ -9,33 +9,77 @@ import { CloseIcon, HamburgerIcon } from '@/components/ui/icons'
 import { DesktopNav } from './DesktopNav'
 import { MobileNav } from './MobileNav'
 
+const SCROLL_THRESHOLD = 24
+const HASH_SCROLL_DELAY_MS = 100
+const SCROLL_END_DEBOUNCE_MS = 50
+const SECTION_ROOT_MARGIN = '-40% 0px -55% 0px'
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('')
+  const [isScrolling, setIsScrolling] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 24)
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
+    const handleHashChange = () => {
+      const hash = window.location.hash.slice(1)
+      if (hash) {
+        setActiveSection(hash)
+        const element = document.getElementById(hash)
+        if (element) {
+          setTimeout(() => element.scrollIntoView({ behavior: 'smooth' }), HASH_SCROLL_DELAY_MS)
+        }
+      } else {
+        setActiveSection('')
+      }
+    }
+
+    window.addEventListener('hashchange', handleHashChange)
+    handleHashChange()
+
+    return () => window.removeEventListener('hashchange', handleHashChange)
   }, [])
 
   useEffect(() => {
-    const sectionIds = ['about', 'skills', 'experience', 'education', 'contact']
+    let scrollEndTimer: NodeJS.Timeout
+    const handleScroll = () => {
+      setScrolled(window.scrollY > SCROLL_THRESHOLD)
+      setIsScrolling(true)
+      clearTimeout(scrollEndTimer)
+      scrollEndTimer = setTimeout(() => setIsScrolling(false), SCROLL_END_DEBOUNCE_MS)
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      clearTimeout(scrollEndTimer)
+    }
+  }, [])
+
+  useEffect(() => {
+    const sectionIds = ['hero', 'about', 'skills', 'experience', 'education', 'contact']
     const observers = sectionIds.map((id) => {
       const el = document.getElementById(id)
       if (!el) return null
       const obs = new IntersectionObserver(
         ([entry]) => {
-          if (entry.isIntersecting) setActiveSection(id)
+          if (entry.isIntersecting) {
+            setActiveSection(id)
+            if (!isScrolling) {
+              if (id !== 'hero') {
+                window.history.replaceState(null, '', `#${id}`)
+              } else {
+                window.history.replaceState(null, '', window.location.pathname)
+              }
+            }
+          }
         },
-        { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
+        { rootMargin: SECTION_ROOT_MARGIN, threshold: 0 }
       )
       obs.observe(el)
       return obs
     })
     return () => observers.forEach((obs) => obs?.disconnect())
-  }, [])
+  }, [isScrolling])
 
   const handleLogoClick = (e: React.MouseEvent) => {
     e.preventDefault()
@@ -63,7 +107,7 @@ export default function Navbar() {
           mm.dev
         </Link>
 
-        <DesktopNav activeSection={activeSection} />
+        <DesktopNav activeSection={activeSection} onSectionChange={setActiveSection} />
 
         <button
           className="text-muted-foreground transition-colors hover:text-foreground md:hidden"
@@ -75,7 +119,12 @@ export default function Navbar() {
         </button>
       </div>
 
-      <MobileNav isOpen={mobileOpen} activeSection={activeSection} onLinkClick={handleMobileNavLinkClick} />
+      <MobileNav
+        isOpen={mobileOpen}
+        activeSection={activeSection}
+        onMenuClose={handleMobileNavLinkClick}
+        onSectionChange={setActiveSection}
+      />
     </nav>
   )
 }

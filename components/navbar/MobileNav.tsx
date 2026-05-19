@@ -13,10 +13,11 @@ const navLinks = [
 interface MobileNavProps {
   isOpen: boolean
   activeSection: string
-  onLinkClick: () => void
+  onMenuClose: () => void
+  onSectionChange: (id: string) => void
 }
 
-export function MobileNav({ isOpen, activeSection, onLinkClick }: MobileNavProps) {
+export function MobileNav({ isOpen, activeSection, onMenuClose, onSectionChange }: MobileNavProps) {
   return (
     <div
       className={`-mx-6 overflow-hidden transition-all duration-150 ease-in-out md:hidden ${
@@ -29,7 +30,14 @@ export function MobileNav({ isOpen, activeSection, onLinkClick }: MobileNavProps
           const id = link.href.slice(1)
           const isActive = activeSection === id
           return (
-            <NavLink key={link.href} href={link.href} label={link.label} isActive={isActive} onClick={onLinkClick} />
+            <NavLink
+              key={link.href}
+              href={link.href}
+              label={link.label}
+              isActive={isActive}
+              onClick={onMenuClose}
+              onNavLinkClick={onSectionChange}
+            />
           )
         })}
         <Button
@@ -37,7 +45,7 @@ export function MobileNav({ isOpen, activeSection, onLinkClick }: MobileNavProps
           download
           variant="secondary"
           size="sm"
-          onClick={onLinkClick}
+          onClick={onMenuClose}
         >
           Download Resume
         </Button>
