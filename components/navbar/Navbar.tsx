@@ -11,8 +11,8 @@ import { DesktopNav } from './DesktopNav'
 import { MobileNav } from './MobileNav'
 
 const SCROLL_THRESHOLD = 24
-const SCROLL_END_DEBOUNCE_MS = 50
-const SECTION_ROOT_MARGIN = '-40% 0px -55% 0px'
+const SCROLL_END_DEBOUNCE_MS = 150
+const SECTION_ROOT_MARGIN = '-30% 0px -40% 0px'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
