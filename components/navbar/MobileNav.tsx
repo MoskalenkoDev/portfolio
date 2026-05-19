@@ -20,35 +20,38 @@ interface MobileNavProps {
 export function MobileNav({ isOpen, activeSection, onMenuClose, onSectionChange }: MobileNavProps) {
   return (
     <div
-      className={`-mx-6 overflow-hidden transition-all duration-150 ease-in-out md:hidden ${
-        isOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
+      inert={(!isOpen ? 'true' : undefined) as unknown as boolean}
+      className={`-mx-6 grid bg-background transition-[grid-template-rows] duration-150 ease-in-out md:hidden ${
+        isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
       }`}
     >
-      {isOpen && <div className="border-b border-border" />}
-      <div className="flex flex-col gap-4 bg-background px-6 py-5">
-        {navLinks.map((link) => {
-          const id = link.href.slice(1)
-          const isActive = activeSection === id
-          return (
-            <NavLink
-              key={link.href}
-              href={link.href}
-              label={link.label}
-              isActive={isActive}
-              onClick={onMenuClose}
-              onNavLinkClick={onSectionChange}
-            />
-          )
-        })}
-        <Button
-          href="/Mykola%20Moskalenko%20Full%20Stack%20Resume.pdf"
-          download
-          variant="secondary"
-          size="sm"
-          onClick={onMenuClose}
-        >
-          Download Resume
-        </Button>
+      <div className="min-h-0 overflow-hidden">
+        <div className="border-b border-border" />
+        <div className="flex flex-col gap-4 bg-background px-6 py-5">
+          {navLinks.map((link) => {
+            const id = link.href.slice(1)
+            const isActive = activeSection === id
+            return (
+              <NavLink
+                key={link.href}
+                href={link.href}
+                label={link.label}
+                isActive={isActive}
+                onClick={onMenuClose}
+                onNavLinkClick={onSectionChange}
+              />
+            )
+          })}
+          <Button
+            href="/Mykola%20Moskalenko%20Full%20Stack%20Resume.pdf"
+            download
+            variant="secondary"
+            size="sm"
+            onClick={onMenuClose}
+          >
+            Download Resume
+          </Button>
+        </div>
       </div>
     </div>
   )

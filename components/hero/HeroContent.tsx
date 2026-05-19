@@ -6,10 +6,12 @@ export function HeroContent() {
     <div className="flex min-w-0 flex-1 flex-col items-center text-center md:items-start md:text-left">
       <p className="mb-5 font-mono text-xs uppercase tracking-[0.25em] text-primary">Hello, I&apos;m</p>
 
-      <h1 className="mb-3 font-mono text-4xl font-bold leading-tight text-foreground sm:text-5xl lg:text-6xl">
-        Mykola
-        <br />
-        Moskalenko
+      <h1 className="mb-3 font-mono text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
+        <span className="hero-name-gradient">
+          Mykola
+          <br />
+          Moskalenko
+        </span>
       </h1>
 
       <div className="mb-6 flex items-center gap-1">
@@ -46,7 +48,7 @@ export function HeroContent() {
           href="https://github.com/MoskalenkoDev"
           target="_blank"
           rel="noopener noreferrer"
-          className="p-2.5 text-muted-foreground transition-colors duration-150 hover:text-primary"
+          className="rounded p-2.5 text-muted-foreground outline-none transition-all duration-150 hover:text-primary focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           aria-label="GitHub profile"
         >
           <GitHubIcon />
@@ -55,21 +57,21 @@ export function HeroContent() {
           href="https://www.linkedin.com/in/moskalenko-mykola-dev/"
           target="_blank"
           rel="noopener noreferrer"
-          className="p-2.5 text-muted-foreground transition-colors duration-150 hover:text-primary"
+          className="rounded p-2.5 text-muted-foreground outline-none transition-all duration-150 hover:text-primary focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           aria-label="LinkedIn profile"
         >
           <LinkedInIcon />
         </a>
         <a
           href="tel:+351917296987"
-          className="p-2.5 text-muted-foreground transition-colors duration-150 hover:text-primary"
+          className="rounded p-2.5 text-muted-foreground outline-none transition-all duration-150 hover:text-primary focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           aria-label="Call +351 917 296 987"
         >
           <PhoneIcon />
         </a>
         <a
           href="mailto:moskalenkomykoladev@gmail.com"
-          className="p-2.5 text-muted-foreground transition-colors duration-150 hover:text-primary"
+          className="rounded p-2.5 text-muted-foreground outline-none transition-all duration-150 hover:text-primary focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           aria-label="Send email"
         >
           <EmailIcon />

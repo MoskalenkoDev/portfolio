@@ -17,7 +17,7 @@ interface DesktopNavProps {
 
 export function DesktopNav({ activeSection, onSectionChange }: DesktopNavProps) {
   return (
-    <div className="hidden items-center gap-8 md:flex">
+    <div className="hidden items-center gap-4 md:flex">
       {navLinks.map((link) => {
         const id = link.href.slice(1)
         const isActive = activeSection === id

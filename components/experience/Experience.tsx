@@ -12,9 +12,9 @@ const experiences = [
     period: 'Aug 2023 – Present',
     badge: 'Full-time',
     highlights: [
-      'Designed and implemented new features across client projects; integrated headless CMS solutions (Storyblok, Strapi) to reduce manual content changes and connect CMS with CRM.',
-      'Built dynamic OpenAPI-driven UIs - TanStack Table layouts, deeply nested RJSF forms with pre-populated defaults, CSV export, and data aggregation - all fully dynamic because schema types could change at any point.',
-      'Used Salesforce to inject JavaScript on a client website, giving non-technical managers autonomy to test tools including an AI chatbot they were training on company data for customer support.',
+      'Delivered features across multiple client projects; integrated Storyblok and Strapi as headless CMS solutions, eliminating manual content deployments and bridging CMS with CRM workflows.',
+      'Built fully dynamic OpenAPI-driven UIs - TanStack Table layouts, deeply nested RJSF forms with pre-populated defaults, CSV export, and data aggregation - all schema-driven to handle runtime type changes without code updates.',
+      'Extended a Salesforce-hosted client site with custom JS integrations, enabling non-technical managers to independently test and configure tools including an AI chatbot trained on proprietary company data.',
       'Joined as a consultant on a team shipping fast with AI but producing buggy code - introduced component splitting, extracted repeated logic, enforced PR reviews. Raised code quality without slowing delivery.',
       'Worked both as a standalone developer owning full technical solutions and as part of client teams balancing speed vs. quality tradeoffs.',
     ],
@@ -26,8 +26,8 @@ const experiences = [
     period: 'Jun 2022 – Aug 2023',
     badge: 'Freelance',
     highlights: [
-      'C# backend + React frontend support/maintenance for a US client - new features, bug fixes, and code improvements.',
-      'Built a P2P poker chip exchange platform (Next.js, Node.js, MongoDB) with real-time chat, message history, file upload, and bot-automated transactions via a third-party poker API. Project shut down due to lack of funding.',
+      'Maintained and extended a full-stack C# backend + React frontend for a long-term US client, delivering features and improvements across the entire stack.',
+      'Built a P2P poker chip exchange platform (Next.js, Node.js, MongoDB) with real-time chat, message history, file upload, and bot-automated transactions via a third-party poker API.',
     ],
   },
   {
@@ -37,9 +37,9 @@ const experiences = [
     period: 'May 2021 – Jun 2022',
     badge: 'Full-time',
     highlights: [
-      'Built an internal project management system similar to Jira for assigning tasks across teams and monitoring tickets.',
-      'Built a microservice that ingested Excel files, generated HTML/CSS layouts, and produced 120-page PDF catalogs - custom algorithm for page overflow prevention, element grouping, and complex spacing math to ensure nothing overflowed when there was enough space.',
-      'Onboarded quickly into a legacy codebase: ASP.NET backend, React frontend with a very old MUI beta version (0.3xx).',
+      'Built a full-featured internal task management system covering ticket assignment, team workload tracking, and project monitoring across multiple teams.',
+      'Built a microservice that ingested Excel files, generated HTML/CSS layouts, and produced 120-page PDF catalogs - custom algorithm for page overflow prevention, element grouping, and precise spacing calculations.',
+      'Onboarded quickly into a legacy codebase: ASP.NET backend, React frontend with a legacy MUI version - delivering contributions from day one despite significant technical debt.',
     ],
   },
 ]

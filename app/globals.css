@@ -5,15 +5,16 @@
 @layer base {
   :root {
     /* — Brand — */
-    --color-primary: #58a6ff;
+    --color-primary: 52 211 153;
     --color-primary-foreground: #e6edf3;
 
     /* — Neutral — */
-    --color-background: #0d1117;
-    --color-foreground: #e6edf3;
-    --color-muted: #161b22;
-    --color-muted-foreground: #8b949e;
-    --color-border: #30363d;
+    --color-background: #0b0f0c;
+    --color-foreground: #e0e6e2;
+    --color-muted: 20 28 23;
+    --color-muted-foreground: #8c9890;
+    --color-border: #1f2b23;
+    --color-scrollbar: #3a5240;
 
     /* — Radius — */
     --radius: 0.5rem;
@@ -29,7 +30,7 @@
   }
 
   ::selection {
-    background: rgba(88, 166, 255, 0.3);
+    background: rgba(52, 211, 153, 0.3);
     color: var(--color-foreground);
   }
 
@@ -40,11 +41,11 @@
     background: var(--color-background);
   }
   ::-webkit-scrollbar-thumb {
-    background: var(--color-border);
+    background: var(--color-scrollbar);
     border-radius: 4px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-primary);
+    background: rgb(var(--color-primary));
   }
 }
 
@@ -73,5 +74,68 @@
   }
   .reveal-d4 {
     transition-delay: 0.32s;
+  }
+
+  /* — Hero background grid — */
+  .hero-grid {
+    background-image:
+      linear-gradient(var(--color-border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, black 20%, transparent 100%);
+  }
+
+  /* — Hero ambient glow orbs — */
+  .hero-glow-left {
+    background: radial-gradient(circle, rgba(52, 211, 153, 0.12) 0%, transparent 70%);
+  }
+
+  .hero-glow-right {
+    background: radial-gradient(circle, rgba(52, 211, 153, 0.07) 0%, transparent 65%);
+  }
+
+  /* — Hero name gradient text — */
+  .hero-name-gradient {
+    background: linear-gradient(135deg, var(--color-foreground) 30%, rgb(var(--color-primary)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* — Navbar logo glow — */
+  .logo-glow {
+    text-shadow: 0 0 18px rgba(52, 211, 153, 0.45);
+  }
+
+  /* — Photo glow pulse — */
+  .photo-glow {
+    border: 1px solid var(--color-border);
+    box-shadow:
+      0 0 0 1px rgba(52, 211, 153, 0.08),
+      0 0 24px rgba(52, 211, 153, 0.12),
+      0 0 48px rgba(52, 211, 153, 0.06);
+    animation: photo-glow-pulse 4s ease-in-out infinite;
+  }
+
+  @keyframes photo-glow-pulse {
+    0%,
+    100% {
+      box-shadow:
+        0 0 0 1px rgba(52, 211, 153, 0.08),
+        0 0 24px rgba(52, 211, 153, 0.12),
+        0 0 48px rgba(52, 211, 153, 0.06);
+    }
+    50% {
+      box-shadow:
+        0 0 0 1px rgba(52, 211, 153, 0.2),
+        0 0 32px rgba(52, 211, 153, 0.28),
+        0 0 64px rgba(52, 211, 153, 0.1);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .photo-glow {
+      animation: none;
+    }
   }
 }

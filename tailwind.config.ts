@@ -6,25 +6,20 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: 'var(--color-primary)',
-          light: '#79b8ff',
+          DEFAULT: 'rgb(var(--color-primary) / <alpha-value>)',
+          light: '#6ee7b7',
           foreground: 'var(--color-primary-foreground)',
         },
         background: 'var(--color-background)',
         foreground: 'var(--color-foreground)',
         muted: {
-          DEFAULT: 'var(--color-muted)',
+          DEFAULT: 'rgb(var(--color-muted) / <alpha-value>)',
           foreground: 'var(--color-muted-foreground)',
         },
         border: 'var(--color-border)',
-        subtle: '#cdd9e5',
-        dim: {
-          DEFAULT: '#6e7681',
-          deep: '#484f58',
-        },
       },
       boxShadow: {
-        'glow-primary': '0 0 8px rgba(88, 166, 255, 0.5)',
+        'glow-primary': '0 0 8px rgba(52, 211, 153, 0.5)',
       },
       borderRadius: {
         DEFAULT: 'var(--radius)',

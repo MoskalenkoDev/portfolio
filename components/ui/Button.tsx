@@ -1,9 +1,10 @@
+// 'use client'
 import Link from 'next/link'
 
 import { type VariantProps, tv } from 'tailwind-variants'
 
 const button = tv({
-  base: 'inline-flex items-center justify-center gap-2 rounded font-mono text-sm font-semibold transition-all duration-150 active:scale-95',
+  base: 'inline-flex items-center justify-center gap-2 rounded font-mono text-sm font-semibold transition-all duration-150 active:scale-95 outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background',
   variants: {
     variant: {
       primary: 'bg-primary text-background hover:bg-primary-light',
@@ -11,7 +12,7 @@ const button = tv({
     },
     size: {
       default: 'px-5 py-3',
-      sm: 'px-3 py-1.5',
+      sm: 'px-2 py-1.5',
     },
   },
   defaultVariants: {
@@ -53,6 +54,14 @@ export function Button({ variant, size, className, children, ...props }: ButtonP
     if (isExternal) {
       return (
         <a href={href} download={download} target={target} rel={rel} onClick={onClick} className={classes}>
+          {children}
+        </a>
+      )
+    }
+
+    if (href.startsWith('#')) {
+      return (
+        <a href={href} onClick={onClick} className={classes}>
           {children}
         </a>
       )

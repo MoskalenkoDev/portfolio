@@ -43,12 +43,16 @@ export function ExperienceCard({ experience: exp, isOpen, onToggle }: Experience
       />
 
       <div
-        className={`overflow-hidden rounded-xl border transition-colors duration-200 ${
-          isOpen ? 'border-primary/35 bg-muted' : 'bg-muted/40 hover:border-primary/20 hover:bg-muted/70 border-border'
+        className={`rounded-xl border transition-all duration-150 has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-primary/60 has-[:focus-visible]:ring-offset-2 has-[:focus-visible]:ring-offset-background ${
+          isOpen ? 'border-primary/35 bg-muted' : 'border-border bg-muted/40 hover:border-primary/30 hover:bg-muted/70'
         }`}
       >
         {/* Header - clickable */}
-        <button className="w-full px-5 pb-4 pt-5 text-left" onClick={handleToggle} aria-expanded={isOpen}>
+        <button
+          className="w-full rounded-t-xl px-5 pb-4 pt-5 text-left outline-none"
+          onClick={handleToggle}
+          aria-expanded={isOpen}
+        >
           <div className="flex items-start justify-between gap-4">
             <div className="min-w-0">
               <div className="mb-1 flex flex-wrap items-center gap-2">
@@ -68,21 +72,20 @@ export function ExperienceCard({ experience: exp, isOpen, onToggle }: Experience
 
         {/* Animated expand */}
         <div
-          className={cn(
-            'overflow-hidden transition-all duration-300 ease-in-out',
-            isOpen ? 'max-h-[600px]' : 'max-h-0'
-          )}
+          className={cn('grid transition-all duration-150 ease-in-out', isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]')}
         >
-          <ul className="space-y-3 border-t border-border px-5 pb-5 pt-4">
-            {exp.highlights.map((point, j) => (
-              <li key={j} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
-                <span className="mt-0.5 flex-shrink-0 select-none text-primary" aria-hidden="true">
-                  ▹
-                </span>
-                <span>{point}</span>
-              </li>
-            ))}
-          </ul>
+          <div className="overflow-hidden">
+            <ul className="space-y-3 border-t border-border px-5 pb-5 pt-4">
+              {exp.highlights.map((point, j) => (
+                <li key={j} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
+                  <span className="mt-1 flex-shrink-0 select-none leading-none text-primary" aria-hidden="true">
+                    ▹
+                  </span>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </div>

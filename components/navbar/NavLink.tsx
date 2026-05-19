@@ -1,5 +1,7 @@
 import Link from 'next/link'
 
+import { cn } from '@/utils/cn'
+
 interface NavLinkProps {
   href: string
   label: string
@@ -25,9 +27,10 @@ export function NavLink({ href, label, isActive, onClick, onNavLinkClick }: NavL
     <Link
       href={href}
       onClick={handleClick}
-      className={`font-mono text-sm transition-colors ${
+      className={cn(
+        'rounded px-2 py-1 font-mono text-sm outline-none transition-all duration-150 focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background',
         isActive ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
-      }`}
+      )}
     >
       {label}
     </Link>

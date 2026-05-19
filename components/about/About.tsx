@@ -39,7 +39,7 @@ export default function About() {
               {languages.map((lang) => (
                 <div
                   key={lang.name}
-                  className="bg-muted/50 hover:border-primary/30 flex items-center justify-between rounded-lg border border-border p-3 transition-colors duration-150"
+                  className="flex items-center justify-between rounded-lg border border-border bg-muted/50 p-3 transition-colors duration-150 hover:border-primary/30 hover:bg-muted"
                 >
                   <span className="font-mono text-sm text-foreground">{lang.name}</span>
                   <span className="font-mono text-xs text-muted-foreground">{lang.level}</span>
