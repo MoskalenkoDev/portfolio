@@ -1,3 +1,4 @@
+import { ChevronDownIcon } from '@/components/ui/icons'
 import { cn } from '@/utils/cn'
 
 interface Experience {
@@ -13,20 +14,6 @@ interface ExperienceCardProps {
   experience: Experience
   isOpen: boolean
   onToggle: (id: string) => void
-}
-
-function ChevronDown({ open }: { open: boolean }) {
-  return (
-    <svg
-      className={`duration-250 h-4 w-4 flex-shrink-0 transition-transform ${open ? 'rotate-180' : ''}`}
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-    </svg>
-  )
 }
 
 export function ExperienceCard({ experience: exp, isOpen, onToggle }: ExperienceCardProps) {
@@ -65,7 +52,9 @@ export function ExperienceCard({ experience: exp, isOpen, onToggle }: Experience
               <p className="mt-1 font-mono text-xs text-muted-foreground">{exp.period}</p>
             </div>
             <div className={`mt-1 transition-colors duration-200 ${isOpen ? 'text-primary' : 'text-muted-foreground'}`}>
-              <ChevronDown open={isOpen} />
+              <ChevronDownIcon
+                className={cn('h-4 w-4 flex-shrink-0 transition-transform duration-200', isOpen && 'rotate-180')}
+              />
             </div>
           </div>
         </button>

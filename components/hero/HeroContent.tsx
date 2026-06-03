@@ -19,16 +19,18 @@ export function HeroContent() {
         <span className="inline-block h-5 w-px animate-blink bg-primary" aria-hidden="true" />
       </div>
 
-      <div className="mb-8 flex flex-col gap-2">
+      <div className="mb-8 flex flex-col gap-1">
         <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground md:justify-start">
           <LocationIcon className="h-4 w-4 flex-shrink-0 text-primary" />
           Covilhã, Portugal
         </div>
         <div className="flex items-center justify-center gap-2 text-sm md:justify-start">
-          <span
-            className="inline-block h-2 w-2 flex-shrink-0 animate-pulse rounded-full bg-emerald-400"
-            aria-hidden="true"
-          />
+          <div className="px-1">
+            <span
+              className="inline-block h-2 w-2 flex-shrink-0 animate-pulse rounded-full bg-emerald-400"
+              aria-hidden="true"
+            />
+          </div>
           <span className="font-mono text-xs text-emerald-400">Available immediately</span>
         </div>
       </div>

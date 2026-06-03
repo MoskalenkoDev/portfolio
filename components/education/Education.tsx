@@ -19,7 +19,7 @@ export default function Education() {
               </h3>
               <p className="mb-3 font-mono text-sm text-primary">Bachelor&apos;s in Software Engineering</p>
               <span className="inline-block whitespace-nowrap rounded border border-border bg-background px-3 py-1.5 font-mono text-xs text-muted-foreground">
-                2018 – 2022
+                2018 - 2022
               </span>
             </div>
           </div>

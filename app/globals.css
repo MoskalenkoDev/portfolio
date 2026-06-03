@@ -1,14 +1,14 @@
-@tailwind base;
+﻿@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    /* — Brand — */
+    /* - Brand - */
     --color-primary: 52 211 153;
     --color-primary-foreground: #e6edf3;
 
-    /* — Neutral — */
+    /* - Neutral - */
     --color-background: #0b0f0c;
     --color-foreground: #e0e6e2;
     --color-muted: 20 28 23;
@@ -16,7 +16,7 @@
     --color-border: #1f2b23;
     --color-scrollbar: #3a5240;
 
-    /* — Radius — */
+    /* - Radius - */
     --radius: 0.5rem;
   }
 
@@ -76,7 +76,7 @@
     transition-delay: 0.32s;
   }
 
-  /* — Hero background grid — */
+  /* - Hero background grid - */
   .hero-grid {
     background-image:
       linear-gradient(var(--color-border) 1px, transparent 1px),
@@ -85,7 +85,7 @@
     mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, black 20%, transparent 100%);
   }
 
-  /* — Hero ambient glow orbs — */
+  /* - Hero ambient glow orbs - */
   .hero-glow-left {
     background: radial-gradient(circle, rgba(52, 211, 153, 0.12) 0%, transparent 70%);
   }
@@ -94,7 +94,7 @@
     background: radial-gradient(circle, rgba(52, 211, 153, 0.07) 0%, transparent 65%);
   }
 
-  /* — Hero name gradient text — */
+  /* - Hero name gradient text - */
   .hero-name-gradient {
     background: linear-gradient(135deg, var(--color-foreground) 30%, rgb(var(--color-primary)) 100%);
     -webkit-background-clip: text;
@@ -102,12 +102,12 @@
     background-clip: text;
   }
 
-  /* — Navbar logo glow — */
+  /* - Navbar logo glow - */
   .logo-glow {
     text-shadow: 0 0 18px rgba(52, 211, 153, 0.45);
   }
 
-  /* — Photo glow pulse — */
+  /* - Photo glow pulse - */
   .photo-glow {
     border: 1px solid var(--color-border);
     box-shadow:

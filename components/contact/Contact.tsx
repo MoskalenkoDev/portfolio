@@ -7,7 +7,7 @@ const contactLinks = [
   {
     label: 'Email',
     value: 'moskalenkomykoladev@gmail.com',
-    display: 'moskalenkomykoladev\n@gmail.com',
+    display: 'moskalenkomykoladev@gmail.com',
     href: 'mailto:moskalenkomykoladev@gmail.com',
     external: false,
     icon: <EmailIcon />,

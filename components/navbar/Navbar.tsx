@@ -73,7 +73,7 @@ export default function Navbar() {
           if (!entry.isIntersecting) return
 
           if (clickOverrideRef.current !== null) {
-            // User clicked a link — only accept when the target section arrives
+            // User clicked a link - only accept when the target section arrives
             if (id === clickOverrideRef.current) {
               setActiveSection(id)
               clickOverrideRef.current = null

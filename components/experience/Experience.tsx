@@ -9,7 +9,7 @@ const experiences = [
     id: 'chimplie',
     company: 'Chimplie',
     role: 'Web Developer, Contract',
-    period: 'Aug 2023 – Present',
+    period: 'Aug 2023 - Present',
     badge: 'Full-time',
     highlights: [
       'Delivered features across multiple client projects; integrated Storyblok and Strapi as headless CMS solutions, eliminating manual content deployments and bridging CMS with CRM workflows.',
@@ -23,7 +23,7 @@ const experiences = [
     id: 'freelance',
     company: 'Self-Employed',
     role: 'Freelance Developer',
-    period: 'Jun 2022 – Aug 2023',
+    period: 'Jun 2022 - Aug 2023',
     badge: 'Freelance',
     highlights: [
       'Maintained and extended a full-stack C# backend + React frontend for a long-term US client, delivering features and improvements across the entire stack.',
@@ -34,7 +34,7 @@ const experiences = [
     id: 'magnificent',
     company: 'Magnificent Systems',
     role: 'Software Developer',
-    period: 'May 2021 – Jun 2022',
+    period: 'May 2021 - Jun 2022',
     badge: 'Full-time',
     highlights: [
       'Built a full-featured internal task management system covering ticket assignment, team workload tracking, and project monitoring across multiple teams.',
